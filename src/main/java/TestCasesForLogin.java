@@ -16,7 +16,7 @@ public class TestCasesForLogin {
         webDriver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account#account-creation");
     }
     @Test
-    public void test1()
+    public void testCase1()
     {
         //Here Expected variables means the title of the page that will open after successfully Sign in
         String expected="My account - My Store";
@@ -24,6 +24,23 @@ public class TestCasesForLogin {
         webDriver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("Umerqureshi800@gmail.com");
         //Below line of code will enter the password in the password field
         webDriver.findElement(By.xpath("//*[@id=\"passwd\"]")).sendKeys("faiz78601");
+        //Below line will press the signin button
+        webDriver.findElement(By.xpath("//*[@id=\"SubmitLogin\"]")).click();
+        //Below line of code will get the title of the page that will be opened after successfully login
+        String Actual=webDriver.getTitle();
+        //This will compare the title of the both expected and actual.
+        Assertions.assertEquals(expected,Actual);
+    }
+    @Test
+    public void testCase2()
+            //In this test Case we are inputting wrong password and this test is going to fail because we donot get Desire Page 
+    {
+        //Here Expected variables means the title of the page that will open after successfully Sign in
+        String expected="My account - My Store";
+        //Below line of code will enter the email address in the email field
+        webDriver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("Umerqureshi800@gmail.com");
+        //Below line of code will enter the password in the password field
+        webDriver.findElement(By.xpath("//*[@id=\"passwd\"]")).sendKeys("jdcsdv");
         //Below line will press the signin button
         webDriver.findElement(By.xpath("//*[@id=\"SubmitLogin\"]")).click();
         //Below line of code will get the title of the page that will be opened after successfully login
