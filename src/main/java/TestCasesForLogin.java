@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class TestCasesForLogin {
-     WebDriver  webDriver;
+    WebDriver  webDriver;
     @BeforeEach
     //This method will run before each testCase so that
     public  void run()
@@ -33,6 +33,8 @@ public class TestCasesForLogin {
         String Actual=webDriver.getTitle();
         //This will compare the title of the both expected and actual.
         Assertions.assertEquals(expected,Actual);
+        //THis will quit the browser
+        webDriver.quit();
     }
     @Test
     public void testCase2()
@@ -44,6 +46,7 @@ public class TestCasesForLogin {
         webDriver.findElement(By.xpath("//*[@id=\"SubmitLogin\"]")).click();
         String Actual=webDriver.getTitle();
         Assertions.assertEquals(expected,Actual);
+        webDriver.quit();
     }
     @Test
     public void testCase3()
@@ -55,6 +58,7 @@ public class TestCasesForLogin {
         webDriver.findElement(By.xpath("//*[@id=\"SubmitLogin\"]")).click();
         String Actual=webDriver.getTitle();
         Assertions.assertEquals(expected,Actual);
+        webDriver.quit();
     }
     @Test
     public void testCase4()
@@ -67,5 +71,6 @@ public class TestCasesForLogin {
         webDriver.findElement(By.xpath("//*[@id=\"SubmitLogin\"]")).click();
         String Actual=webDriver.getTitle();
         Assertions.assertEquals(expected,Actual);
+        webDriver.quit();
     }
 }
