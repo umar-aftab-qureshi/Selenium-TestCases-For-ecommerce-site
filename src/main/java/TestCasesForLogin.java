@@ -32,9 +32,10 @@ public class TestCasesForLogin {
         //Below line of code will get the title of the page that will be opened after successfully login
         String Actual=webDriver.getTitle();
         //This will compare the title of the both expected and actual.
+        webDriver.quit();
         Assertions.assertEquals(expected,Actual);
         //THis will quit the browser
-        webDriver.quit();
+
     }
     @Test
     public void testCase2()
@@ -45,8 +46,9 @@ public class TestCasesForLogin {
         webDriver.findElement(By.xpath("//*[@id=\"passwd\"]")).sendKeys("jdcsdv");
         webDriver.findElement(By.xpath("//*[@id=\"SubmitLogin\"]")).click();
         String Actual=webDriver.getTitle();
-        Assertions.assertEquals(expected,Actual);
         webDriver.quit();
+        Assertions.assertEquals(expected,Actual);
+
     }
     @Test
     public void testCase3()
@@ -57,8 +59,9 @@ public class TestCasesForLogin {
         webDriver.findElement(By.xpath("//*[@id=\"passwd\"]")).sendKeys("jdcsdfssdv");
         webDriver.findElement(By.xpath("//*[@id=\"SubmitLogin\"]")).click();
         String Actual=webDriver.getTitle();
-        Assertions.assertEquals(expected,Actual);
         webDriver.quit();
+        Assertions.assertEquals(expected,Actual);
+
     }
     @Test
     public void testCase4()
@@ -70,7 +73,8 @@ public class TestCasesForLogin {
         webDriver.findElement(By.xpath("//*[@id=\"passwd\"]")).sendKeys("jdcsdfssdv");
         webDriver.findElement(By.xpath("//*[@id=\"SubmitLogin\"]")).click();
         String Actual=webDriver.getTitle();
-        Assertions.assertEquals(expected,Actual);
         webDriver.quit();
+        Assertions.assertEquals(expected,Actual);
+
     }
 }
